@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import international from "../../assets/international.png";
 import glance from "../../assets/glance.png";
 import director from "../../assets/director.jpeg";
-import coordinator from "../../assets/coordinator_new.jpg";
+// import coordinator from "../../assets/coordinator_new.jpg";
 
 export const blogsData = [
   {
@@ -54,62 +54,62 @@ export const blogsData = [
       </div>
     ),
   },
-  {
-    id: 2,
-    title: "Coordinator’s Message",
-    image: coordinator,
-    preview:
-      "Mrs. Mamta Sharma, the Program Coordinator, shares updates on The Earth Association's sustainable projects, emphasizing their impact on urban green spaces, youth education, and clean energy advocacy.",
-    content: (
-      <div className="prose lg:prose-xl mx-auto py-6">
-        <p className="mb-4">Greetings from The Earth Association!</p>
-        <p>
-          As the Program Coordinator, I am thrilled to share with you some
-          exciting updates and initiatives that we have been passionately
-          working on to foster environmental sustainability and conservation.
-        </p>
-        <p>
-          At The Earth Association, our mission is to create a sustainable
-          future through innovative projects and community engagement. Here are
-          a few of our latest endeavors:
-        </p>
-        <h4 className="font-semibold">Green Urban Spaces Initiative:</h4>
-        <p>
-          We are transforming urban landscapes into lush green spaces. By
-          partnering with local governments and communities, we are planting
-          trees, creating parks, and developing urban gardens. These green
-          spaces not only enhance the beauty of our cities but also improve air
-          quality and provide residents with much-needed access to nature.
-        </p>
-        <h4 className="font-semibold">
-          Youth Environmental Education Campaign:
-        </h4>
-        <p>
-          Education is at the heart of our efforts. We have launched an
-          educational campaign in schools to teach students about the importance
-          of environmental conservation. By engaging young minds, we hope to
-          inspire a new generation of environmental stewards.
-        </p>
-        <h4 className="font-semibold">Clean Energy Advocacy:</h4>
-        <p>
-          Promoting clean energy solutions is another key focus area for us. We
-          are advocating for renewable energy sources such as solar and wind
-          power. Through workshops and awareness programs, we are encouraging
-          individuals and businesses to adopt sustainable energy practices.
-        </p>
-        <p>
-          These initiatives are just a glimpse of our ongoing efforts. We invite
-          you to join us in our mission to protect and preserve our planet for
-          future generations. Together, we can make a meaningful impact on the
-          environment and create a greener, healthier world.
-        </p>
-        <p>Thank you for your continued support.</p>
-        <p>Warm regards,</p>
-        <p>Mrs. Mamta Sharma</p>
-        <p>Program Coordinator, The Earth Association</p>
-      </div>
-    ),
-  },
+  // {
+  //   id: 2,
+  //   title: "Coordinator’s Message",
+  //   image: coordinator,
+  //   preview:
+  //     "Mrs. Mamta Sharma, the Program Coordinator, shares updates on The Earth Association's sustainable projects, emphasizing their impact on urban green spaces, youth education, and clean energy advocacy.",
+  //   content: (
+  //     <div className="prose lg:prose-xl mx-auto py-6">
+  //       <p className="mb-4">Greetings from The Earth Association!</p>
+  //       <p>
+  //         As the Program Coordinator, I am thrilled to share with you some
+  //         exciting updates and initiatives that we have been passionately
+  //         working on to foster environmental sustainability and conservation.
+  //       </p>
+  //       <p>
+  //         At The Earth Association, our mission is to create a sustainable
+  //         future through innovative projects and community engagement. Here are
+  //         a few of our latest endeavors:
+  //       </p>
+  //       <h4 className="font-semibold">Green Urban Spaces Initiative:</h4>
+  //       <p>
+  //         We are transforming urban landscapes into lush green spaces. By
+  //         partnering with local governments and communities, we are planting
+  //         trees, creating parks, and developing urban gardens. These green
+  //         spaces not only enhance the beauty of our cities but also improve air
+  //         quality and provide residents with much-needed access to nature.
+  //       </p>
+  //       <h4 className="font-semibold">
+  //         Youth Environmental Education Campaign:
+  //       </h4>
+  //       <p>
+  //         Education is at the heart of our efforts. We have launched an
+  //         educational campaign in schools to teach students about the importance
+  //         of environmental conservation. By engaging young minds, we hope to
+  //         inspire a new generation of environmental stewards.
+  //       </p>
+  //       <h4 className="font-semibold">Clean Energy Advocacy:</h4>
+  //       <p>
+  //         Promoting clean energy solutions is another key focus area for us. We
+  //         are advocating for renewable energy sources such as solar and wind
+  //         power. Through workshops and awareness programs, we are encouraging
+  //         individuals and businesses to adopt sustainable energy practices.
+  //       </p>
+  //       <p>
+  //         These initiatives are just a glimpse of our ongoing efforts. We invite
+  //         you to join us in our mission to protect and preserve our planet for
+  //         future generations. Together, we can make a meaningful impact on the
+  //         environment and create a greener, healthier world.
+  //       </p>
+  //       <p>Thank you for your continued support.</p>
+  //       <p>Warm regards,</p>
+  //       <p>Mrs. Mamta Sharma</p>
+  //       <p>Program Coordinator, The Earth Association</p>
+  //     </div>
+  //   ),
+  // },
   {
     id: 3,
     title: "The Earth Association at a Glance",

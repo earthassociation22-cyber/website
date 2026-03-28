@@ -5,6 +5,7 @@ import Impact from "./Impact"
 import Programmes from "./Programmes"
 import Involved from "./Involved"
 import Hero from "./Hero"
+import IntroVideo from "./IntroVideo"
 import Blogs from "./Blogs"
 import UpcomingEvents from "./UpcomingEvents"
 
@@ -13,6 +14,7 @@ const Landing = () => {
 		<main className="mt-[65px]">
 			<Hero />
 			<Desc />
+			<IntroVideo />
 			<UpcomingEvents/>
 			<Programmes />
 			<Initiatives />

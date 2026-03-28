@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RGallery from "react-photo-gallery";
 import { photos } from "../../assets/wildlifeWeek/photos";
 import { photos as photos2 } from "../../assets/newspaperCuttings/photos";
+import { programListPhotos } from "../../assets/wildlifeWeek/programListPhotos";
 import Photo from "./Photo";
 import { useGallery } from "../../context/GalleryContext";
 
@@ -9,6 +10,7 @@ const Gallery = () => {
   const { openImage } = useGallery();
   const [seeMoreWildlife, setSeeMoreWildlife] = useState(false);
   const [seeMoreNewspaper, setSeeMoreNewspaper] = useState(false);
+  const [seeMoreProgramList, setSeeMoreProgramList] = useState(false);
 
   return (
     <main className="my-[65px]">
@@ -18,9 +20,8 @@ const Gallery = () => {
         </h2>
         <div className="relative">
           <div
-            className={`relative overflow-hidden transition-all duration-500 ${
-              seeMoreWildlife ? "max-h-[100%]" : "max-h-[400px]"
-            }`}
+            className={`relative overflow-hidden transition-all duration-500 ${seeMoreWildlife ? "max-h-[100%]" : "max-h-[400px]"
+              }`}
           >
             <RGallery
               photos={photos}
@@ -57,9 +58,8 @@ const Gallery = () => {
         <div className="relative">
           {/* Gallery with gradient overlay */}
           <div
-            className={`relative overflow-hidden transition-all duration-500 ${
-              seeMoreNewspaper ? "max-h-[100%]" : "max-h-[400px]"
-            }`}
+            className={`relative overflow-hidden transition-all duration-500 ${seeMoreNewspaper ? "max-h-[100%]" : "max-h-[400px]"
+              }`}
           >
             <RGallery
               photos={photos2}
@@ -85,6 +85,44 @@ const Gallery = () => {
               className="px-6 py-2 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition duration-300"
             >
               {seeMoreNewspaper ? "See Less" : "See More"}
+            </button>
+          </div>
+        </div>
+
+        {/* Program List Section */}
+        <h2 className="font-bebas text-[45px] tracking-[1px] font-bold mb-8 mt-12">
+          Earth Associations Programs
+        </h2>
+        <div className="relative">
+          {/* Gallery with gradient overlay */}
+          <div
+            className={`relative overflow-hidden transition-all duration-500 ${seeMoreProgramList ? "max-h-[100%]" : "max-h-[400px]"
+              }`}
+          >
+            <RGallery
+              photos={programListPhotos}
+              onClick={(event, atr) =>
+                openImage(
+                  atr.photo.src,
+                  programListPhotos.map((p) => p.src)
+                )
+              }
+              renderImage={(props) => <Photo {...props} />}
+            />
+          </div>
+
+          {/* Gradient Overlay */}
+          {!seeMoreProgramList && (
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
+          )}
+
+          {/* See More Button */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+            <button
+              onClick={() => setSeeMoreProgramList(!seeMoreProgramList)}
+              className="px-6 py-2 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition duration-300"
+            >
+              {seeMoreProgramList ? "See Less" : "See More"}
             </button>
           </div>
         </div>

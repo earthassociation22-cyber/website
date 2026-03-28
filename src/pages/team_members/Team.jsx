@@ -2,6 +2,7 @@ import React from "react";
 import { teamMembers } from "../../assets/Members/members";
 import { useGallery } from "../../context/GalleryContext";
 
+
 const Team = () => {
     const { openImage } = useGallery();
 
