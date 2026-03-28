@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import RGallery from "react-photo-gallery";
+import PhotoAlbum from "react-photo-album";
 import { photos } from "../../assets/wildlifeWeek/photos";
 import { photos as photos2 } from "../../assets/newspaperCuttings/photos";
 import { programListPhotos } from "../../assets/wildlifeWeek/programListPhotos";
-import Photo from "./Photo";
 import { useGallery } from "../../context/GalleryContext";
 
 const Gallery = () => {
@@ -23,15 +22,15 @@ const Gallery = () => {
             className={`relative overflow-hidden transition-all duration-500 ${seeMoreWildlife ? "max-h-[100%]" : "max-h-[400px]"
               }`}
           >
-            <RGallery
+            <PhotoAlbum
+              layout="rows"
               photos={photos}
-              onClick={(event, atr) =>
+              onClick={({ index }) =>
                 openImage(
-                  atr.photo.src,
+                  photos[index].src,
                   photos.map((p) => p.src)
                 )
               }
-              renderImage={(props) => <Photo {...props} />}
             />
           </div>
 
@@ -61,15 +60,15 @@ const Gallery = () => {
             className={`relative overflow-hidden transition-all duration-500 ${seeMoreNewspaper ? "max-h-[100%]" : "max-h-[400px]"
               }`}
           >
-            <RGallery
+            <PhotoAlbum
+              layout="rows"
               photos={photos2}
-              onClick={(event, atr) =>
+              onClick={({ index }) =>
                 openImage(
-                  atr.photo.src,
+                  photos2[index].src,
                   photos2.map((p) => p.src)
                 )
               }
-              renderImage={(props) => <Photo {...props} />}
             />
           </div>
 
@@ -99,15 +98,15 @@ const Gallery = () => {
             className={`relative overflow-hidden transition-all duration-500 ${seeMoreProgramList ? "max-h-[100%]" : "max-h-[400px]"
               }`}
           >
-            <RGallery
+            <PhotoAlbum
+              layout="rows"
               photos={programListPhotos}
-              onClick={(event, atr) =>
+              onClick={({ index }) =>
                 openImage(
-                  atr.photo.src,
+                  programListPhotos[index].src,
                   programListPhotos.map((p) => p.src)
                 )
               }
-              renderImage={(props) => <Photo {...props} />}
             />
           </div>
 
