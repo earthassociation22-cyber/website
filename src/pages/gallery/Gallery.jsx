@@ -46,7 +46,7 @@ const Gallery = () => {
       <div className="w-full h-screen flex flex-col justify-center items-center bg-gray-50/50">
         <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1f693a] mb-6"></div>
         <h2 className="font-bebas text-2xl tracking-widest text-[#1f693a] animate-pulse">
-          Loading High Quality Assets...
+          Loading...
         </h2>
       </div>
     );
@@ -55,28 +55,27 @@ const Gallery = () => {
   return (
     <main className="my-[80px] w-full overflow-hidden animate-fade-in">
       <div className="w-full mx-auto font-raleway min-h-[90vh]">
-        
+
         {/* Wildlife Gallery Section */}
         <div className="mb-24 relative w-full pt-4">
           <h2 className="font-bebas text-[45px] text-center tracking-[1px] font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#1f693a] to-emerald-500 drop-shadow-sm uppercase">
             Wildlife Week Gallery
           </h2>
           <div
-            className={`relative overflow-hidden transition-all duration-[1200ms] ease-in-out w-full ${
-              seeMoreWildlife ? "max-h-[8000px]" : "max-h-[400px]"
-            }`}
+            className={`relative overflow-hidden transition-all duration-[1200ms] ease-in-out w-full ${seeMoreWildlife ? "max-h-[8000px]" : "max-h-[400px]"
+              }`}
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1 md:gap-2 px-1 md:px-2">
               {photos.map((photo, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm bg-gray-100"
                   onClick={() => openImage(photo.src, photos.map((p) => p.src))}
                 >
-                  <img 
-                    src={photo.src} 
-                    alt="Wildlife Week" 
-                    className="w-full h-full object-cover transition-opacity duration-500" 
+                  <img
+                    src={photo.src}
+                    alt="Wildlife Week"
+                    className="w-full h-full object-cover transition-opacity duration-500"
                     loading="lazy"
                   />
                 </div>
@@ -104,21 +103,20 @@ const Gallery = () => {
             Newspaper Cuttings
           </h2>
           <div
-            className={`relative overflow-hidden transition-all duration-[1200ms] ease-in-out w-full ${
-              seeMoreNewspaper ? "max-h-[8000px]" : "max-h-[400px]"
-            }`}
+            className={`relative overflow-hidden transition-all duration-[1200ms] ease-in-out w-full ${seeMoreNewspaper ? "max-h-[8000px]" : "max-h-[400px]"
+              }`}
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1 md:gap-2 px-1 md:px-2">
               {photos2.map((photo, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm bg-gray-100"
                   onClick={() => openImage(photo.src, photos2.map((p) => p.src))}
                 >
-                  <img 
-                    src={photo.src} 
-                    alt="Newspaper Cutting" 
-                    className="w-full h-full object-cover transition-opacity duration-500" 
+                  <img
+                    src={photo.src}
+                    alt="Newspaper Cutting"
+                    className="w-full h-full object-cover transition-opacity duration-500"
                     loading="lazy"
                   />
                 </div>
@@ -146,21 +144,20 @@ const Gallery = () => {
             Earth Associations Programs
           </h2>
           <div
-            className={`relative overflow-hidden transition-all duration-[1200ms] ease-in-out w-full ${
-              seeMoreProgramList ? "max-h-[8000px]" : "max-h-[400px]"
-            }`}
+            className={`relative overflow-hidden transition-all duration-[1200ms] ease-in-out w-full ${seeMoreProgramList ? "max-h-[8000px]" : "max-h-[400px]"
+              }`}
           >
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1 md:gap-2 px-1 md:px-2">
               {programListPhotos.map((photo, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm bg-gray-100"
                   onClick={() => openImage(photo.src, programListPhotos.map((p) => p.src))}
                 >
-                  <img 
-                    src={photo.src} 
-                    alt="Program" 
-                    className="w-full h-full object-cover transition-opacity duration-500" 
+                  <img
+                    src={photo.src}
+                    alt="Program"
+                    className="w-full h-full object-cover transition-opacity duration-500"
                     loading="lazy"
                   />
                 </div>
