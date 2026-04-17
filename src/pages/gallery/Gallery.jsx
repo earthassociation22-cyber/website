@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { photos } from "../../assets/wildlifeWeek/photos";
 import { photos as photos2 } from "../../assets/newspaperCuttings/photos";
 import { programListPhotos } from "../../assets/wildlifeWeek/programListPhotos";
@@ -9,9 +9,51 @@ const Gallery = () => {
   const [seeMoreWildlife, setSeeMoreWildlife] = useState(false);
   const [seeMoreNewspaper, setSeeMoreNewspaper] = useState(false);
   const [seeMoreProgramList, setSeeMoreProgramList] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Intelligent Image Preloader
+  useEffect(() => {
+    const preloadCrucialImages = async () => {
+      // Preload only the initial visible batch of images (the first 6 per section)
+      // This makes the initial page paint lightning-fast while the browser lazy-loads the remaining assets.
+      const initialImages = [
+        ...photos.slice(0, 6),
+        ...photos2.slice(0, 6),
+        ...programListPhotos.slice(0, 6),
+      ];
+
+      try {
+        await Promise.all(
+          initialImages.map((photo) => {
+            return new Promise((resolve) => {
+              const img = new Image();
+              img.src = photo.src;
+              img.onload = resolve;
+              img.onerror = resolve; // Safely resolve anyway if a broken asset occurs
+            });
+          })
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    preloadCrucialImages();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="w-full h-screen flex flex-col justify-center items-center bg-gray-50/50">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#1f693a] mb-6"></div>
+        <h2 className="font-bebas text-2xl tracking-widest text-[#1f693a] animate-pulse">
+          Loading High Quality Assets...
+        </h2>
+      </div>
+    );
+  }
 
   return (
-    <main className="my-[80px] w-full overflow-hidden">
+    <main className="my-[80px] w-full overflow-hidden animate-fade-in">
       <div className="w-full mx-auto font-raleway min-h-[90vh]">
         
         {/* Wildlife Gallery Section */}
@@ -28,13 +70,13 @@ const Gallery = () => {
               {photos.map((photo, index) => (
                 <div 
                   key={index} 
-                  className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm"
+                  className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm bg-gray-100"
                   onClick={() => openImage(photo.src, photos.map((p) => p.src))}
                 >
                   <img 
                     src={photo.src} 
                     alt="Wildlife Week" 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover transition-opacity duration-500" 
                     loading="lazy"
                   />
                 </div>
@@ -70,13 +112,13 @@ const Gallery = () => {
               {photos2.map((photo, index) => (
                 <div 
                   key={index} 
-                  className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm"
+                  className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm bg-gray-100"
                   onClick={() => openImage(photo.src, photos2.map((p) => p.src))}
                 >
                   <img 
                     src={photo.src} 
                     alt="Newspaper Cutting" 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover transition-opacity duration-500" 
                     loading="lazy"
                   />
                 </div>
@@ -112,13 +154,13 @@ const Gallery = () => {
               {programListPhotos.map((photo, index) => (
                 <div 
                   key={index} 
-                  className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm"
+                  className="aspect-square overflow-hidden cursor-pointer hover:shadow-2xl hover:z-10 transition-all duration-300 transform hover:scale-[1.02] relative rounded-sm bg-gray-100"
                   onClick={() => openImage(photo.src, programListPhotos.map((p) => p.src))}
                 >
                   <img 
                     src={photo.src} 
                     alt="Program" 
-                    className="w-full h-full object-cover" 
+                    className="w-full h-full object-cover transition-opacity duration-500" 
                     loading="lazy"
                   />
                 </div>
