@@ -2,14 +2,14 @@ import introVideo from "../../assets/intro.mp4"
 
 const IntroVideo = () => {
 	return (
-		<section className="max-w-[1140px] mx-auto px-4 mb-12 mt-10">
-			<div className="text-center mb-8">
-				<h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3 tracking-wide">See Our Impact</h2>
-				<div className="w-20 h-1 bg-green-600 mx-auto rounded-full"></div>
+		<section className="max-w-[1140px] mx-auto px-4 mb-20 mt-12">
+			<div className="text-center mb-10">
+				<h2 className="font-bebas text-[45px] tracking-[1px] font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#1f693a] to-emerald-500 drop-shadow-sm uppercase">See Our Impact</h2>
+				<div className="w-24 h-1.5 bg-gradient-to-r from-[#1f693a] to-emerald-400 mx-auto rounded-full shadow-sm"></div>
 			</div>
-			<div className="w-full rounded-2xl overflow-hidden shadow-xl bg-black/5 border border-gray-200">
+			<div className="w-full rounded-3xl overflow-hidden shadow-2xl shadow-green-900/10 bg-black/5 border-[4px] border-white/50 backdrop-blur-sm group">
 				<video 
-					className="w-full h-auto max-h-[70vh] object-contain bg-black"
+					className="w-full h-auto max-h-[70vh] object-cover bg-black opacity-90 group-hover:opacity-100 transition-opacity duration-500"
 					controls 
 					autoPlay 
 					muted 

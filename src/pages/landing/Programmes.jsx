@@ -21,13 +21,13 @@ const responsive = {
 
 const Programmes = () => {
 	return (
-		<section>
-			<div className="max-w-[1140px] mx-auto p-2.5 text-[18px] text-center text-black font-raleway">
-				<h2 className=" font-bebas text-[45px] tracking-[1px] font-bold mb-8">
+		<section className="py-16 relative bg-gradient-to-b from-white via-green-50/20 to-white">
+			<div className="max-w-[1140px] mx-auto p-4 text-[18px] text-center text-black font-raleway">
+				<h2 className="font-bebas text-[45px] tracking-[1px] font-bold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#1f693a] to-green-500 drop-shadow-sm uppercase">
 					OUR PROGRAMMES
 				</h2>
 				<Carousel
-					className="p-2.5"
+					className="p-2.5 pb-8"
 					// infinite={true}
 					swipeable
 					responsive={responsive}
@@ -45,9 +45,9 @@ const Programmes = () => {
 					})}
 				</Carousel>
 				{/* <div className="grid grid-cols-1 tab:grid-cols-2 lg:grid-cols-3 gap-4"></div> */}
-				<div className="mt-4">
-					<a className="text-pgreen " href="">
-						know more &gt;
+				<div className="mt-8">
+					<a className="inline-block text-[#1f693a] font-bold tracking-wide hover:text-green-500 hover:scale-105 transition-all duration-300 bg-green-50 py-3 px-8 rounded-full shadow-sm hover:shadow-md" href="">
+						KNOW MORE &gt;
 					</a>
 				</div>
 			</div>
@@ -58,19 +58,22 @@ export default Programmes
 
 const ProgrammeCard = ({ image, title, description }) => {
 	return (
-		<div className="text-start bg-[#f3f2f3] mx-3 rounded-b-lg overflow-clip">
-			<div>
+		<div className="text-start bg-white mx-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group flex flex-col h-full min-h-[480px]">
+			<div className="overflow-hidden relative">
+				<div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
 				<img
 					src={image || ""}
-					alt=""
-					className="bg-black cover w-full h-[250px] shadow-md shadow-black/50"
+					alt={title}
+					className="w-full h-[240px] object-cover group-hover:scale-110 transition-transform duration-700"
 				/>
 			</div>
-			<div className="px-[50px] pb-10 pt-4 flex flex-col gap-4">
-				<div className="text-[17px] font-raleway font-bold tracking-wider">
+			<div className="px-6 py-6 pb-8 flex flex-col gap-3 flex-grow bg-gradient-to-b from-transparent to-green-50/30">
+				<div className="text-[20px] font-raleway font-bold tracking-wide text-gray-800 group-hover:text-[#1f693a] transition-colors duration-300">
 					{title}
 				</div>
-				<div className="text-[14px] font-raleway">{description}</div>
+				<div className="text-[15px] font-raleway text-gray-600 leading-relaxed">
+					{description}
+				</div>
 			</div>
 		</div>
 	)

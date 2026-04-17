@@ -2,11 +2,14 @@ import { Fragment } from "react"
 import Hero from "../landing/Hero"
 import Desc from "./Desc"
 import NavAbout from "./NavAbout"
+import EbookDownload from "./EbookDownload"
 
 const About = () => {
 	return (
 		<main className="my-[65px]">
 			<Hero />
+			
+			<EbookDownload />
 
 			{aboutData.map((dataItem) => {
 				return (
