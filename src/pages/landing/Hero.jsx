@@ -22,8 +22,8 @@ const Hero = () => {
 				className="absolute inset-0 z-10 w-full h-full object-contain object-center"
 			/>
 			<div className="max-w-[1140px] mx-auto w-full flex justify-start pointer-events-none">
-				<p className="tab:text-[60px] relative z-20 text-[40px] font-bebas tracking-wider font-bold text-white max-w-[20ch] drop-shadow-lg">
-					Empowering Communities for a Greener Tomorrow
+				<p className="tab:text-[60px] relative z-20 text-[40px] font-bebas tracking-wider font-bold max-w-[20ch] text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-300 drop-shadow-[0_4px_4px_rgba(0,0,0,1)]">
+					Empowering Communities for a <span className="bg-gradient-to-r from-green-300 to-emerald-500 text-transparent bg-clip-text">Greener Tomorrow</span>
 				</p>
 			</div>
 		</section>

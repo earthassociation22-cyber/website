@@ -1,5 +1,5 @@
 import Desc from "./Desc"
-import FeaturedPosters from "./FeaturedPosters"
+// import FeaturedPosters from "./FeaturedPosters"
 import Initiatives from "./Initiatives"
 import Goals from "./Goals"
 import Impact from "./Impact"
@@ -8,7 +8,7 @@ import Involved from "./Involved"
 import Hero from "./Hero"
 import IntroVideo from "./IntroVideo"
 import Blogs from "./Blogs"
-import UpcomingEvents from "./UpcomingEvents"
+// import UpcomingEvents from "./UpcomingEvents"
 
 const Landing = () => {
 	return (
@@ -16,7 +16,7 @@ const Landing = () => {
 			<Hero />
 			<Desc />
 			<IntroVideo />
-			<FeaturedPosters />
+			{/* <FeaturedPosters /> */}
 			{/* <UpcomingEvents /> */}
 			<Programmes />
 			<Initiatives />

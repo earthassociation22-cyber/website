@@ -11,18 +11,16 @@ const InitiativeCard = ({ title, points, color, isExpanded, onClick }) => {
 					className={`text-gray-800 p-6 font-bold tracking-wide text-start text-[20px] tab:text-[23px] flex items-center group-hover:text-[#1f693a] transition-colors duration-300`}
 				>
 					<span
-						className={`mr-4 transform transition-all duration-500 text-green-600 bg-white/50 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-sm ${
-							isExpanded ? "rotate-90 bg-white" : "group-hover:scale-110"
-						}`}
+						className={`mr-4 transform transition-all duration-500 text-green-600 bg-white/50 backdrop-blur-sm rounded-full w-8 h-8 flex items-center justify-center shadow-sm ${isExpanded ? "rotate-90 bg-white" : "group-hover:scale-110"
+							}`}
 					>
 						▶
 					</span>
 					{title}
 				</div>
 				<div
-					className={`font-raleway text-[16px] text-gray-700 text-start leading-relaxed tracking-wider overflow-hidden transition-all duration-500 ease-in-out ${
-						isExpanded ? "max-h-[1000px] opacity-100 pb-8" : "max-h-0 opacity-0"
-					}`}
+					className={`font-raleway text-[16px] text-gray-700 text-start leading-relaxed tracking-wider overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? "max-h-[1000px] opacity-100 pb-8" : "max-h-0 opacity-0"
+						}`}
 				>
 					<ul className="list-disc pl-16 pr-6 space-y-3 marker:text-green-500">
 						{points.map((point, index) => (
@@ -43,12 +41,24 @@ const Initiatives = () => {
 			title: "School and College Engagement",
 			points: [
 				"Poster Making Competitions",
-				"Face Painting Sessions",
+				"Artistic and Intellectual Activities for Students",
 				"Debate Competitions",
 				"Environmental Workshops",
 				"Green Campus Projects",
 			],
 			color: "bg-gradient-to-br from-yellow-50 to-yellow-100/50",
+		},
+		{
+			title: "Internship Programs",
+			points: [
+				"internship programs for graduate and postgraduate students",
+				"Field Research & Data Collection",
+				"Sustainability Project Management",
+				"Environmental Policy Analysis",
+				"Community Outreach Leadership",
+				"Conservation Media & Reporting",
+			],
+			color: "bg-gradient-to-br from-blue-50 to-blue-100/50",
 		},
 		{
 			title: "Environment Fest",
@@ -117,7 +127,7 @@ const Initiatives = () => {
 				<h2 className="text-[45px] tracking-[1px] font-bold mb-10 text-transparent bg-clip-text bg-gradient-to-r from-[#1f693a] to-emerald-500 drop-shadow-sm uppercase">
 					OUR INITIATIVES
 				</h2>
-				<div className="flex flex-wrap gap-6 p-2 justify-center">
+				<div className="flex flex-wrap items-start gap-6 p-2 justify-center">
 					{initiatives.map((programme, index) => (
 						<InitiativeCard
 							key={index}

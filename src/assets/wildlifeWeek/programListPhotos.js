@@ -24,7 +24,7 @@ import p31 from './Earth associations program list _page-0031.jpg';
 import p32 from './Earth associations program list _page-0032.jpg';
 import p33 from './Earth associations program list _page-0033.jpg';
 import p34 from './Earth associations program list _page-0034.jpg';
-import p35 from './Earth associations program list _page-0035.jpg';
+// import p35 from './Earth associations program list _page-0035.jpg';
 
 export const programListPhotos = [
     { src: p2, width: 1755, height: 1240 },
@@ -53,5 +53,5 @@ export const programListPhotos = [
     { src: p32, width: 1240, height: 1755 },
     { src: p33, width: 1240, height: 1755 },
     { src: p34, width: 1240, height: 1755 },
-    { src: p35, width: 1240, height: 1755 },
+    // { src: p35, width: 1240, height: 1755 },
 ];

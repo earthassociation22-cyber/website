@@ -3,6 +3,7 @@ import "react-multi-carousel/lib/styles.css"
 import a from "../../assets/a.jpg"
 import g from "../../assets/g.jpg"
 import f from "../../assets/f.jpg"
+import b from "../../assets/poster2.jpeg"
 
 const responsive = {
 	desktop: {
@@ -80,6 +81,12 @@ const ProgrammeCard = ({ image, title, description }) => {
 }
 
 const programmeData = [
+	{
+		image: b,
+		title: "internship programs for graduate and postgraduate students",
+		description:
+			"Our internship program offers graduate and postgraduate students practical experience in sustainability and environmental work. Interns engage in field research, data collection, and project management to support real-world initiatives.",
+	},
 	{
 		image: a,
 		title: "Environmental Education Program",

@@ -63,7 +63,7 @@ import p71 from './newspaper_cuttings_page-0071.jpg';
 import p72 from './newspaper_cuttings_page-0072.jpg';
 import p73 from './newspaper_cuttings_page-0073.jpg';
 import p74 from './newspaper_cuttings_page-0074.jpg';
-import p75 from './newspaper_cuttings_page-0075.jpg'; 
+import p75 from './newspaper_cuttings_page-0075.jpg';
 import p76 from './newspaper_cuttings_page-0076.jpg';
 import p77 from './newspaper_cuttings_page-0077.jpg';
 import p78 from './newspaper_cuttings_page-0078.jpg';
@@ -71,6 +71,15 @@ import p79 from './newspaper_cuttings_page-0079.jpg';
 import p80 from './newspaper_cuttings_page-0080.jpg';
 import p81 from './newspaper_cuttings_page-0081.jpg';
 import p82 from './newspaper_cuttings_page-0082.jpg';
+import p83 from './newspaper_cuttings_page-0083.jpeg';
+import p84 from './newspaper_cuttings_page-0084.jpeg';
+import p85 from './newspaper_cuttings_page-0085.jpeg';
+import p86 from './newspaper_cuttings_page-0086.jpeg';
+import p87 from './newspaper_cuttings_page-0087.jpeg';
+// import p88 from './newspaper_cuttings_page-0088.jpeg';
+import p89 from './newspaper_cuttings_page-0089.jpeg';
+import p90 from './newspaper_cuttings_page-0090.jpeg';
+
 
 export const photos = [
 
@@ -302,5 +311,13 @@ export const photos = [
   { src: p79, width: 1240, height: 1755 },
   { src: p80, width: 1240, height: 1755 },
   { src: p81, width: 1240, height: 1755 },
-  { src: p82, width: 1240, height: 1755 }
+  { src: p82, width: 1240, height: 1755 },
+  { src: p83, width: 1240, height: 1755 },
+  { src: p84, width: 1240, height: 1755 },
+  { src: p85, width: 1240, height: 1755 },
+  { src: p86, width: 1240, height: 1755 },
+  { src: p87, width: 1240, height: 1755 },
+  // { src: p88, width: 1240, height: 1755 },
+  { src: p89, width: 1240, height: 1755 },
+  { src: p90, width: 1240, height: 1755 }
 ]
