@@ -11,7 +11,13 @@ import Gallery from "./pages/gallery/Gallery.jsx";
 import NotFound from "./pages/notFound/NotFound.jsx";
 import Team from "./pages/team_members/Team.jsx";
 import Events from "./pages/events/events.jsx";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AdminLayout from "./pages/admin/AdminLayout.jsx";
+import AdminLogin from "./pages/admin/AdminLogin.jsx";
+import AdminDashboard from "./pages/admin/AdminDashboard.jsx";
+import Verify from "./pages/verify/Verify.jsx";
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,11 +57,31 @@ const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: "/admin/login",
+    element: <AdminLogin />,
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "",
+        element: <AdminDashboard />,
+      },
+    ],
+  },
+  {
+    path: "/verify",
+    element: <Verify />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
