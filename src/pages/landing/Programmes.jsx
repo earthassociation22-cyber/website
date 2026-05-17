@@ -4,6 +4,7 @@ import a from "../../assets/a.jpg"
 import g from "../../assets/g.jpg"
 import f from "../../assets/f.jpg"
 import b from "../../assets/poster2.jpeg"
+import { useState } from "react"
 
 const responsive = {
 	desktop: {
@@ -21,6 +22,8 @@ const responsive = {
 }
 
 const Programmes = () => {
+	const [selectedImage, setSelectedImage] = useState(null)
+
 	return (
 		<section className="py-16 relative bg-gradient-to-b from-white via-green-50/20 to-white">
 			<div className="max-w-[1140px] mx-auto p-4 text-[18px] text-center text-black font-raleway">
@@ -41,6 +44,7 @@ const Programmes = () => {
 								key={i}
 								title={t.title}
 								description={t.description}
+								onImageClick={() => setSelectedImage(t.image)}
 							/>
 						)
 					})}
@@ -52,15 +56,38 @@ const Programmes = () => {
 					</a>
 				</div>
 			</div>
+
+			{/* Image Modal */}
+			{selectedImage && (
+				<div 
+					className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm transition-opacity"
+					onClick={() => setSelectedImage(null)}
+				>
+					<div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+						<button 
+							className="absolute -top-10 right-0 md:-right-10 text-white text-4xl hover:text-gray-300 transition-colors z-50"
+							onClick={() => setSelectedImage(null)}
+						>
+							&times;
+						</button>
+						<img 
+							src={selectedImage} 
+							alt="Full poster" 
+							className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+							onClick={(e) => e.stopPropagation()}
+						/>
+					</div>
+				</div>
+			)}
 		</section>
 	)
 }
 export default Programmes
 
-const ProgrammeCard = ({ image, title, description }) => {
+const ProgrammeCard = ({ image, title, description, onImageClick }) => {
 	return (
 		<div className="text-start bg-white mx-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 group flex flex-col h-full min-h-[480px]">
-			<div className="overflow-hidden relative">
+			<div className="overflow-hidden relative cursor-pointer" onClick={onImageClick}>
 				<div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
 				<img
 					src={image || ""}

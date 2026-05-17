@@ -18,7 +18,10 @@ export default function Verify() {
       const res = await api.post('/verify', { serialNo, credential });
       setResult(res.data);
     } catch (err) {
-      setResult({ verified: false, message: 'Verification failed or service unavailable.' });
+      setResult({ 
+        verified: false, 
+        message: err.response?.data?.message || 'Network Error: Verification failed or service unavailable.' 
+      });
     } finally {
       setLoading(false);
     }
