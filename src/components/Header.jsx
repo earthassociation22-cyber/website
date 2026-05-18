@@ -69,6 +69,14 @@ const Header = () => {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                to="/verify"
+                className="block py-2 pl-3 pr-4 uppercase text-[13px] font-raleway font-bold text-[#666] hover:text-pgreen  rounded  lg:p-0"
+              >
+                Verify Certificate
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
